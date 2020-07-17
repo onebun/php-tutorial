@@ -47,7 +47,7 @@
 
 				$_SESSION['isLoggedIn'] = true;
 				if (isset($_SESSION['isLoggedIn'])) {
-					echo $logoutBar;
+					echo $logoutBar; 
 				}
 			}
 */
