@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-		
+
 		<script>
-			function 
-			create a ul  that can be called on each page
-			
-						var nav = document.getElementById("Navigation");
-						var ul = document.getElementById("UnorderedList");
-						var a = document.createElement("a");
-						var linkText = document.createTextNode("Log Out");
-						var li = document.createElement("li");
-						a.href = "login-logout.php";
-						a.appendChild(linkText);
-						li.appendChild(link);
-						ul.appendChild(li);
-						//nav.appendChild(ul);
-						alert(ul.innerHTML);
-					</script>
+			function navigation() {
+				//create a ul  that can be called on each page
+				var nav = document.getElementById("Navigation");
+				var ul = document.getElementById("UnorderedList");
+				var a = document.createElement("a");
+				var linkText = document.createTextNode("Log Out");
+				var li = document.createElement("li");
+				a.href = "login-logout.php";
+				a.appendChild(linkText);
+				li.appendChild(link);
+				ul.appendChild(li);
+				//nav.appendChild(ul);
+				alert(ul.innerHTML);
+
 			}
+		</script>
 
 <?php
 /*			function navigation() {
@@ -37,17 +37,17 @@
 			//			</ul>
 			//		</nav>
 			//	NAVBAR;
-			
+
 				$logoutBar = <<<LOGOUTBAR
-					
+
 				LOGOUTBAR;
 
-				
+
 
 
 				$_SESSION['isLoggedIn'] = true;
 				if (isset($_SESSION['isLoggedIn'])) {
-					echo $logoutBar; 
+					echo $logoutBar;
 				}
 			}
 */

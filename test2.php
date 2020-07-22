@@ -17,17 +17,14 @@
 					<li> <a href="#">Contact</a></li>
 				</ul>
 				EOT;
-
+				//alert("hello navList");
 				echo $code;
 			}
 
 			function appendLogoutToNav() {
 				$code = <<<EOT
 				<script>
-					var node = document.createlement("li");
-					const linknode = '<a href="#">Log Out</a>';
-					node.innerHTML = linknode;
-					document.getElementById("NavigationBar").appendChild(node);
+					document.getElementById('NavigationBar').innerHTML += "<li> <a href='#'>Log Out</a></li>";
 				</script>
 				EOT;
 				echo $code;
