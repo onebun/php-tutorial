@@ -4,48 +4,26 @@
 
 <?php
 	include 'login-navbar.php';
-	
-	navigation();
+	navList();
 ?>
 
-<?php
-/*
-		login-main
-		login-check
-		login-protected
-		contacts (empty)
-		login-logout
+<html lang="en-us">
 
-		function: navbar()
-			echo out the navbar
-			if isSet($_SESSION['isLoggedIn'] {
-				also include the logout link
-			}
+	<head>
+		<title>Welcome. Please log in.</title>
+		<meta charset="utf-8">
+	</head>
 
-		stylesheet
+	<body>
+		<form action='login-check.php' method='post'>
+			<label for='username'>Your login: </label>
+			<input type='text' id='username' name='username'><br>
+			<label for='password'>Password: </label>
+			<input type='text' id='password' name='password'><br><br>
+			<input type='submit' value='Submit'>
+		</form>
 
-		login-main
-			session_start();
-			navbar();
-			login form
-				write in php with heredoc, echo out
-				redirect to login-check
-			if isSet($_GET["isBlock"])
-				echo("<p>You must log in.</p>");
-			else if query badUserCredentials
-				echo("<p>Wrong username or password. Please try again.</p>");
 
-		login-check
-			session_start();
-			navbar();
-			if credentials correct {
-				$_SESSION['isLoggedIn'];
-				header('Location: login-protected.php');
-				redirect to login-protected.php with session isLoggedIn
-			}
-			else {
-				header('Location: login-main.php?badUserCredentials=true')	
-			}
+	</body>
 
-	*/
-?>
+</html>
