@@ -1,8 +1,7 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 
 <?php
+	session_start();
 	include 'login-navbar.php';
 	navList();
 ?>
@@ -15,15 +14,25 @@
 	</head>
 
 	<body>
-		<form action='login-check.php' method='post'>
+		<form method='post' action='login-check.php'>
 			<label for='username'>Your login: </label>
-			<input type='text' id='username' name='username'><br>
+			<input type='text' name='username'><br>
 			<label for='password'>Password: </label>
-			<input type='text' id='password' name='password'><br><br>
-			<input type='submit' value='Submit'>
+			<input type='password' name='password'><br><br>
+			<input type='submit' value='Submit'><br>
 		</form>
 
+		<p id='notice'></p>
+	</body>
 
-	</body> 
+	<?php
+		if ($_GET['badUserCredentials']) {
+			$code = <<<EOT
+			<script>document.getElementById('notice').innerHTML = 'We were expecting another answer. Give it another try.';</script>
+			EOT;
+			echo $code;
+		}
+	?>
+
 
 </html>
