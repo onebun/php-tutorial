@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-
-<html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-	</head>
-</html>
 
 <?php
   session_start();
-  echo '<script>alert("made it to the start of the script o_O!")</script>';
+
+  echo '<script>console.log("login-check.php, start of script");</script>';
   $name = $password = '';
   $myusername = 'a'; //arbitrary credentials, come back later, make user-defined
-  $mypassword = 'b';
+  $mypassword = 'a';
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') { //check data was posted
     $name = test_input($_POST['username']); //make input safe
-    $password = test_input($_POST['password']);
-
-    if ($name == $myusername && password == $mypassword) { //check if credentials match up
+    $pass = test_input($_POST['password']);
+    if ($name == $myusername && $pass == $mypassword) { //check if credentials match up
       $_SESSION['signed-in'] = true;
-      echo '<script>alert("login success!")</script>';
+      echo '<script>alert("login success!");</script>';
       header('Location: login-protected.php');
     }
     else {
-      echo '<script>alert("login fail")</script>';
+      echo '<script>alert("login fail");</script>';
       header('Location: login-main.php?badUserCredentials=true');
     }
   }
